@@ -1,5 +1,5 @@
 //commands.js
-//
+
 //Ping command
 function pingCommand(message) {
 	const startTime = Date.now(); 
