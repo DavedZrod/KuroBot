@@ -5,7 +5,7 @@ function pingCommand(message) {
 	const startTime = Date.now(); 
 
 	message.reply({
-		content: 'Pong!', allowedMentions: {
+		content: "Right back at 'ya!", allowedMentions: {
 			repliedUser: false
 		}
 	})
@@ -16,7 +16,7 @@ function pingCommand(message) {
 			const responseTime = Date.now() - startTime;
 			//edit the ping msg
 			pingMsg.edit({
-				content: `Pong! \nBot Latency: \`${botLatency}ms\` \nResponse Time: \`${responseTime}ms\``, allowedMentions: {
+				content: `Right back at 'ya! \nBot Latency: \`${botLatency}ms\` \nResponse Time: \`${responseTime}ms\``, allowedMentions: {
 					repliedUser: false
 				}
 			})
