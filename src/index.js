@@ -30,7 +30,7 @@ client.on('messageCreate', (message) => {
 	console.log(message.author.username, ": ", message.content);
 
 	//use a prefix
-	if (message.content.startsWith('k.')) {
+	if (message.content.startsWith('k,')) {
 		const args = message.content.slice(2).trim().split(/ +/);
 		const userCommand = args.shift().toLocaleLowerCase();
 		if (userCommand === 'ping'){
