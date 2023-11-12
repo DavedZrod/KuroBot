@@ -29,7 +29,7 @@ function shutdownCommand(message, botOwnerID, client) {
 		console.log('Shutting down...')
 		message.channel.send('Shutting down...')
 			.then(() => {
-				client.destroy();
+				process.exit(0);
 			});
 	} else {
 		message.channel.send('You dont have the permission')

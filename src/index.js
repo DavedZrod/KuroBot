@@ -56,6 +56,7 @@ client.on('messageCreate', (message) => {
 		});
 	}
 
+
 	// Define a regular expression to match the Twitter link pattern
 	const twitterLinkRegex = /https:\/\/twitter\.com\/\w+\/status\/\d+/g; //define a twt link
 	const noEmbed = /^<.+>$/; //define a link with no embed
@@ -69,11 +70,11 @@ client.on('messageCreate', (message) => {
 			console.log('twt link with embed(?) attempting to replace with vx..');
 
 			const replacedText = message.content.replace(normalTwitterLink, 'https://vxtwitter.com');
-			textChannel.send(replacedText);
+			textChannel.send({
+				content: `${message.author}**:** ${replacedText}`, allowedMentions: { parse: [] }
+			})
 			message.delete()
 		}
-
-
 	}
 
 })
