@@ -24,7 +24,7 @@ function pingCommand(message) {
 		})
 }
 //shutdown command
-function shutdownCommand(message, botOwnerID, client) {
+function shutdownCommand(message, botOwnerID) {
 	if (message.author.id == botOwnerID) {
 		console.log('Shutting down...')
 		message.channel.send('Shutting down...')

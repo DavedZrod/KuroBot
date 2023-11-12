@@ -36,7 +36,7 @@ client.on('messageCreate', (message) => {
 		if (userCommand === 'ping') {
 			commands.pingCommand(message);
 		} else if (userCommand === 'shutdown' || userCommand === 'off') {
-			commands.shutdownCommand(message, botOwnerID, client);
+			commands.shutdownCommand(message, botOwnerID);
 		}
 	}
 
