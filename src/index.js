@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const { Client, IntentsBitField, TextChannel } = require('discord.js');
+const { Client, IntentsBitField, TextChannel, ActivityType } = require('discord.js');
 const keepAlive = require("../server");
 
 const client = new Client({
@@ -15,8 +15,24 @@ const token = process.env['TOKEN'];
 const botOwnerID = process.env['botOwnerID']
 const commands = require('./commands');
 
+let status = [
+	{
+		name: 'over Illya',
+		type: ActivityType.Watching,
+	},
+	{
+		name: 'with Illya',
+		type: ActivityType.Playing,
+	},
+]
+
 client.on('ready', (c) => {
 	console.log(`${c.user.username} is online`);
+	let random = Math.floor(Math.random() * status.length);
+	client.user.setActivity(status[random])
+	setInterval(() => {
+		client.user.setActivity(status[random])
+	}, 180000);
 });
 
 client.on('messageCreate', (message) => {
