@@ -1,6 +1,8 @@
 const Discord = require("discord.js");
 const { Client, IntentsBitField, TextChannel, ActivityType } = require('discord.js');
 const keepAlive = require("./server");
+const { CommandKit } = require('commandkit');
+const path = require('path');
 
 const client = new Client({
 	intents: [
@@ -25,6 +27,13 @@ let status = [
 		type: ActivityType.Playing,
 	},
 ];
+
+//event handler
+new CommandKit({
+	client,
+	commandsPath: path.join(__dirname, 'slashCommands'),
+
+});
 
 client.on('ready', (c) => {
 	console.log(`${c.user.username} is online`);
