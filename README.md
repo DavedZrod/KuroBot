@@ -1,5 +1,5 @@
 # KuroBot
-A discord bot for personal use.
+A discord bot for personal use. For selfhosting/local use, go to the [local](https://github.com/DavedZrod/KuroBot/tree/local) branch
 
 Fork on replit
 fill secrets TOKEN and botOwnerID
