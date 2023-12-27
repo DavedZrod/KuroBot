@@ -88,6 +88,11 @@ client.on('messageCreate', (message) => {
 	const normalTwitterLink = /https:\/\/twitter\.com/g;
 	if (twitterLinkRegex.test(message.content)) {
 		console.log('Twitter link detected');
+		
+		if (message.content.startsWith('!')){
+			console.log("Aborting vx-ify");
+			return;
+		}
 		if (noEmbed.test(message.content)) {
 			console.log('Twt link with no embed');
 		}
